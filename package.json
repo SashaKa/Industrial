@@ -1,0 +1,32 @@
+{
+  "name": "Industrial",
+  "version": "1.0.0",
+  "description": "Responsive layout",
+  "main": ".gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SashaKa/Industrial.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SashaKa/Industrial/issues"
+  },
+  "homepage": "https://github.com/SashaKa/Industrial#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-less": "^3.3.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-util": "^3.0.8"
+  },
+  "devDependencies": {
+    "less-plugin-sass2less": "^1.1.0"
+  }
+}

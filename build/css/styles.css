@@ -1,0 +1,45 @@
+@mixin respond-to (@breakpoint-mobile) {
+  @media screen and (min-width: 320px) {
+  }
+}
+@font-face {
+  font-family: "HKGrotesk", sans-serif;
+  src: url(../fonts/hk-grotesk/HKGrotesk-Light.otf);
+}
+@font-face {
+  font-family: "LeagueSpartan", sans-serif;
+  src: url(../fonts/league-spartan/LeagueSpartan-Bold.otf);
+}
+.bordered {
+  border-width: 3px;
+  border-style: solid;
+}
+.bordered:hover {
+  border-color: #82c9d8;
+}
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  background-color: #232c43;
+  font-size: 16px;
+  font-family: "HKGrotesk", sans-serif;
+  margin: 0 auto;
+}
+.site-wrapper {
+  margin: 0 auto;
+  padding: 2% 9%;
+}
+.main__offer-description {
+  font-family: "HKGrotesk", sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+}
+.main__offer-button,
+.subscribe__form-input,
+.main__offer-button {
+  font-family: "HKGrotesk", sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+}

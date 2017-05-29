@@ -1,0 +1,66 @@
+@import url(brakepoints.less);
+
+@font-face {
+    font-family: "HKGrotesk", sans-serif;
+    src: url(../fonts/hk-grotesk/HKGrotesk-Light.otf);
+}
+@font-face {
+    font-family: "LeagueSpartan", sans-serif;
+    src: url(../fonts/league-spartan/LeagueSpartan-Bold.otf);
+}
+
+
+@background:hsl(223, 31%, 20%);
+@hover-color:  #82c9d8;
+@title-color: #fff;
+@text-color:  #92a1a9;
+@border: #eec9a2;
+@border-input:#63757e;
+@main-font: "HKGrotesk", sans-serif;
+@bold-font: 700;
+@normal-font: 300;
+@small-title: 18px;
+@normal-title: 24px;
+@midi-title: 36px;
+@large-title: 48px;
+@extra-title: 80px;
+
+.bordered {
+    border-width: 3px;
+    border-style: solid;
+
+    &:hover {
+        border-color: @hover-color;
+    }
+
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: @background;
+    font-size: 16px;
+    font-family: @main-font;
+    margin: 0 auto;
+}
+.site-wrapper {
+    margin: 0 auto;
+    padding: 2% 9%;
+}
+
+
+.main__offer-description {
+    font-family: @main-font;
+    font-size: 32px;
+    font-weight: @normal-font;
+}
+
+.main__offer-button,
+.subscribe__form-input,
+.main__offer-button {
+    font-family: @main-font;
+    font-size: @normal-title;
+    font-weight: @normal-font;
+    
+}
