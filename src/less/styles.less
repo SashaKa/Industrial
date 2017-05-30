@@ -8,13 +8,12 @@
     src: url(../fonts/league-spartan/LeagueSpartan-Bold.otf);
 }
 
-
-@background:hsl(223, 31%, 20%);
+@background-color:hsl(223, 31%, 20%);
 @hover-color:  #82c9d8;
 @title-color: #fff;
 @text-color:  #92a1a9;
-@border: #eec9a2;
-@border-input:#63757e;
+@border-color: #eec9a2;
+@border-color-input:#63757e;
 @main-font: "HKGrotesk", sans-serif;
 @bold-font: 700;
 @normal-font: 300;
@@ -24,7 +23,7 @@
 @large-title: 48px;
 @extra-title: 80px;
 
-.bordered {
+.bordered () {
     border-width: 3px;
     border-style: solid;
 
@@ -33,12 +32,20 @@
     }
 
 }
+.screen(@min, @max, @ruleset) {
+  @media (min-width: @min) and (max-width: (@max - 1)) {
+    @ruleset();
+  }
+}
+
+
+
 * {
     box-sizing: border-box;
 }
 
 body {
-    background-color: @background;
+    background-color: @background-color;
     font-size: 16px;
     font-family: @main-font;
     margin: 0 auto;
@@ -88,7 +95,7 @@ body {
     position: absolute;
     height: 9px;
     width: 100%;
-    background: @border;
+    background: @border-color;
     border-radius: 9px;
     opacity: 1;
     right: 0;
@@ -124,15 +131,11 @@ body {
             }
 
 }
-.menu__list-mobile {
+// .menu__list-mobile TODO
     display: none;
 }
-@mobile {
-    .menu__list-mobile {
-        display: block;
-        background-color: @hover-color;
-    }
-}
+
+
 
 .main__offer-title {
     font-size: @extra-title;

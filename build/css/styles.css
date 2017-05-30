@@ -6,13 +6,6 @@
   font-family: "LeagueSpartan", sans-serif;
   src: url(../fonts/league-spartan/LeagueSpartan-Bold.otf);
 }
-.bordered {
-  border-width: 3px;
-  border-style: solid;
-}
-.bordered:hover {
-  border-color: #82c9d8;
-}
 * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -98,13 +91,7 @@ body {
 .menu__list-mobile {
   display: none;
 }
-@mobile {
-  .menu__list-mobile {
-    display: block;
-    background-color: #82c9d8;
-  }
-}
-.main__offer-title {
+.menu__list-mobile .main__offer-title {
   font-size: 80px;
   font-family: "LeagueSpartan", sans-serif;
 }
