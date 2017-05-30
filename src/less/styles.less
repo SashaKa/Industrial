@@ -1,5 +1,4 @@
 @import url(brakepoints.less);
-
 @font-face {
     font-family: "HKGrotesk", sans-serif;
     src: url(../fonts/hk-grotesk/HKGrotesk-Light.otf);
@@ -43,13 +42,102 @@ body {
     font-size: 16px;
     font-family: @main-font;
     margin: 0 auto;
+    line-height: normal;
 }
 .site-wrapper {
     margin: 0 auto;
     padding: 2% 9%;
 }
+.main {
+    color: @title-color;
+}
+.burger {
+    width: 60px;
+    height: 45px;
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
 
+    .show-menu {
+        display: block;
 
+            &:nth-child(2) {
+                width: 0%;
+                opacity: 0;
+            }
+            :nth-child(3) {
+                -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                top: 39px;
+                left: 8px;
+                }
+
+    }
+}
+.menu__stripe {
+    display: block;
+    position: absolute;
+    height: 9px;
+    width: 100%;
+    background: @border;
+    border-radius: 9px;
+    opacity: 1;
+    right: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+
+        &:nth-child(1) {
+            top: 0px;
+            -webkit-transform-origin: left center;
+            -moz-transform-origin: left center;
+            -o-transform-origin: left center;
+            transform-origin: left center;
+        }
+        &:nth-child(2) {
+            top: 18px;
+            -webkit-transform-origin: left center;
+            -moz-transform-origin: left center;
+            -o-transform-origin: left center;
+            transform-origin: left center;
+        }
+        &:nth-child(3) {
+            top: 36px;
+            -webkit-transform-origin: left center;
+            -moz-transform-origin: left center;
+            -o-transform-origin: left center;
+            transform-origin: left center;
+            }
+
+}
+.menu__list-mobile {
+    display: none;
+}
+@mobile {
+    .menu__list-mobile {
+        display: block;
+        background-color: @hover-color;
+    }
+}
+
+.main__offer-title {
+    font-size: @extra-title;
+    font-family: "LeagueSpartan", sans-serif;
+}
 .main__offer-description {
     font-family: @main-font;
     font-size: 32px;
@@ -58,9 +146,77 @@ body {
 
 .main__offer-button,
 .subscribe__form-input,
-.main__offer-button {
+.main__offer-button,
+.main__goods-description,
+.menu__link {
     font-family: @main-font;
     font-size: @normal-title;
     font-weight: @normal-font;
     
 }
+.link {
+    text-decoration: none;
+    color: @text-color;
+    transition: all 0.6s ease-in-out;
+    &:hover {
+        color: @title-color;
+    }
+}
+ .button {
+     background-color: transparent;
+     color: @title-color;
+     transition: all 0.6s ease-in-out;
+     .bordered;
+
+        &:hover {
+            color: @hover-color;
+
+        }
+
+ }
+.main__offer-button{
+    padding: 18px 27px;
+}
+ .main__goods-title {
+    font-family:  "LeagueSpartan", sans-serif;
+    font-size: @large-title;;
+ }
+ .main__goods-button,
+ .main__list-button,
+ .subscribe__form-button {
+     font-size: @small-title;
+     font-family: "LeagueSpartan", sans-serif;
+     font-weight: @bold-font;
+     text-transform: uppercase;
+     padding:12px 16px ;
+     
+ }
+ .main__list-title {
+     font-size: @midi-title;
+     font-family: "LeagueSpartan", sans-serif;
+     text-transform: uppercase;
+     font-weight: @bold-font;
+ }
+ .main__list-description {
+     font-family: @main-font;
+     font-size: 16px;
+     font-weight: @normal-font;
+ }
+ .subscribe__appile-title {
+     font-size: @midi-title;
+     font-weight: @normal-font;
+     font-family: @main-font;
+     color: @text-color;
+ }
+.subscribe__appile-text,
+.footer__copyright {
+     font-weight: @normal-font;
+     font-family: @main-font;
+     font-size: @small-title;
+     color: @text-color;
+
+ }
+ .subscribe__form-input,
+ .subscribe__form-button {
+     padding: 16px 20px;
+ }

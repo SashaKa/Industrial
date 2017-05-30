@@ -1,72 +1,8 @@
-@breakpoint-mobile:     320px;
-@breakpoint-mobile-l:   425px;
+@mobile: ~"screen and (min-width: 320px)";
+@mobile-l:   425px;
 @breakpoint-mobile-hd:  640px;
 @breakpoint-phablet:    768px;
 @breakpoint-tablet:     960px;
 @breakpoint-laptop:     1024px;
 @breakpoint-desktop:    1152px;
 @breakpoint-laptop-hd:  1280px;
-
-@mixin respond-to (@breakpoint-mobile) {
-   @media screen and (min-width: @breakpoint-mobile) {
-    //    @content;
-   }
-}
-
-// @mixin _print_maped_properties( @props ) {
-//     @each @prop, @value in @props {
-//         @if type-of( @value ) == "string" {
-//             #{@prop}: unquote(@value);
-//         } @else {
-//             #{@prop}: @value;
-//         }
-//     }
-// }
-
-// @mixin apply-to-desktop( @props ) {
-//     @media (min-width: 1025px) {
-//         @include _print_maped_properties( @props );
-//     }
-// }
-
-// @mixin apply-to-tablet( @props ) {
-//     @media (min-width: 768px) and (max-width: 1024px) {
-//         @include _print_maped_properties( @props );
-//     }
-// }
-
-// @mixin apply-to-mobile( @props ) {
-//     @media (max-width: 767px) {
-//         @include _print_maped_properties( @props );
-//     }
-// }
-
-// @mixin apply-to-non-mobile( @props ) {
-//     @media (min-width: 768px) {
-//         @include _print_maped_properties( @props );
-//     }
-// }
-// @mixin respond-to (@breakpoint-mobile) {
-//   @media screen and (min-width: 320px) {
-//   }
-// }
-// @mixin apply-to-desktop( @props ) {
-//   @media (min-width: 1025px) {
-//     @include _print_maped_properties( @props );
-//   }
-// }
-// @mixin apply-to-tablet( @props ) {
-//   @media (min-width: 768px) and (max-width: 1024px) {
-//     @include _print_maped_properties( @props );
-//   }
-// }
-// @mixin apply-to-mobile( @props ) {
-//   @media (max-width: 767px) {
-//     @include _print_maped_properties( @props );
-//   }
-// }
-// @mixin apply-to-non-mobile( @props ) {
-//   @media (min-width: 768px) {
-//     @include _print_maped_properties( @props );
-//   }
-// }
