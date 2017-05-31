@@ -10,9 +10,12 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+html {
+  font-size: -moz-calc(16.25px);
+  font-size: calc(16.25px);
+}
 body {
   background-color: #232c43;
-  font-size: 16px;
   font-family: "HKGrotesk", sans-serif;
   margin: 0 auto;
   line-height: normal;
@@ -21,11 +24,50 @@ body {
   margin: 0 auto;
   padding: 2% 9%;
 }
+.header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (min-width: 320px) and (max-width: 639px) {
+  .header__search {
+    display: none;
+  }
+}
+@media (min-width: 320px) and (max-width: 639px) {
+  .header__search {
+    display: none;
+  }
+}
 .main {
   color: #fff;
 }
+@media (min-width: 320px) and (max-width: 639px) {
+  .header__logo {
+    width: 60%;
+    margin-left: auto;
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+}
+@media (min-width: 320px) and (max-width: 639px) {
+  .header__logo {
+    width: 60%;
+    margin-left: auto;
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+}
 .burger {
-  width: 60px;
+  width: 50px;
   height: 45px;
   position: relative;
   -webkit-transform: rotate(0deg);
@@ -36,28 +78,16 @@ body {
   transition: 0.5s ease-in-out;
   cursor: pointer;
 }
-.burger .show-menu {
+.burger .menu-on {
   display: block;
 }
-.burger .show-menu:nth-child(2) {
-  width: 0%;
-  opacity: 0;
-}
-.burger .show-menu :nth-child(3) {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  top: 39px;
-  left: 8px;
-}
-.menu__stripe {
+.burger .menu__stripe {
   display: block;
   position: absolute;
   height: 9px;
   width: 100%;
-  background: #eec9a2;
-  border-radius: 9px;
+  background: #82c9d8;
+  border-radius: 2px;
   opacity: 1;
   right: 0;
   -webkit-transform: rotate(0deg);
@@ -67,38 +97,76 @@ body {
   -moz-transition: 0.25s ease-in-out;
   transition: 0.25s ease-in-out;
 }
-.menu__stripe:nth-child(1) {
+.burger .menu__stripe:nth-child(1) {
   top: 0px;
   -webkit-transform-origin: left center;
   -moz-transform-origin: left center;
   -ms-transform-origin: left center;
   transform-origin: left center;
 }
-.menu__stripe:nth-child(2) {
+.burger .menu__stripe:nth-child(2) {
   top: 18px;
   -webkit-transform-origin: left center;
   -moz-transform-origin: left center;
   -ms-transform-origin: left center;
   transform-origin: left center;
 }
-.menu__stripe:nth-child(3) {
+.burger .menu__stripe:nth-child(3) {
   top: 36px;
   -webkit-transform-origin: left center;
   -moz-transform-origin: left center;
   -ms-transform-origin: left center;
   transform-origin: left center;
 }
-.menu__list-mobile {
-  display: none;
+.burger .menu-on .menu__stripe:nth-child(2) {
+  width: 0%;
+  opacity: 0;
 }
-.menu__list-mobile .main__offer-title {
-  font-size: 80px;
+.burger .menu-on .menu__stripe :nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 39px;
+  left: 8px;
+}
+.menu__list-mobile {
+  visibility: hidden;
+  position: absolute;
+  background-color: #232c43;
+  top: 52px;
+  left: -200px;
+  width: 80vw;
+  padding: 15px 10px;
+  -moz-transition: left .3s;
+  transition: left .3s;
+}
+.show-menu {
+  visibility: visible;
+  left: 0;
+  z-index: 2;
+}
+.main__offer-title {
+  font-size: 5rem;
   font-family: "LeagueSpartan", sans-serif;
+  text-transform: uppercase;
+  padding-top: 20px;
+}
+@media (min-width: 320px) and (max-width: 639px) {
+  .main__offer-title {
+    font-size: 4rem;
+  }
+}
+@media (min-width: 320px) and (max-width: 639px) {
+  .main__offer-title {
+    font-size: 4rem;
+  }
 }
 .main__offer-description {
   font-family: "HKGrotesk", sans-serif;
-  font-size: 32px;
+  font-size: 1.2rem;
   font-weight: 300;
+  padding-bottom: 40px;
 }
 .main__offer-button,
 .subscribe__form-input,
@@ -106,8 +174,26 @@ body {
 .main__goods-description,
 .menu__link {
   font-family: "HKGrotesk", sans-serif;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 300;
+}
+@media (min-width: 320px) and (max-width: 639px) {
+  .main__offer-button,
+  .subscribe__form-input,
+  .main__offer-button,
+  .main__goods-description,
+  .menu__link {
+    font-size: 0.75rem;
+  }
+}
+@media (min-width: 320px) and (max-width: 639px) {
+  .main__offer-button,
+  .subscribe__form-input,
+  .main__offer-button,
+  .main__goods-description,
+  .menu__link {
+    font-size: 0.75rem;
+  }
 }
 .link {
   text-decoration: none;
@@ -133,46 +219,185 @@ body {
   color: #82c9d8;
 }
 .main__offer-button {
-  padding: 18px 27px;
+  padding: 2% 3%;
 }
 .main__goods-title {
   font-family: "LeagueSpartan", sans-serif;
-  font-size: 48px;
+  font-size: 3rem;
+}
+@media (min-width: 320px) and (max-width: 639px) {
+  .main__goods-title {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 320px) and (max-width: 639px) {
+  .main__goods-title {
+    font-size: 2rem;
+  }
 }
 .main__goods-button,
 .main__list-button,
 .subscribe__form-button {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-family: "LeagueSpartan", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  padding: 12px 16px ;
+  padding: 2% 3%;
+}
+@media (min-width: 320px) and (max-width: 639px) {
+  .main__goods-button,
+  .main__list-button,
+  .subscribe__form-button {
+    font-size: 0.75rem;
+  }
+}
+@media (min-width: 320px) and (max-width: 639px) {
+  .main__goods-button,
+  .main__list-button,
+  .subscribe__form-button {
+    font-size: 0.75rem;
+  }
 }
 .main__list-title {
-  font-size: 36px;
+  font-size: 2.25rem;
   font-family: "LeagueSpartan", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
+}
+@media (min-width: 320px) and (max-width: 639px) {
+  .main__list-title {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 320px) and (max-width: 639px) {
+  .main__list-title {
+    font-size: 1.5rem;
+  }
 }
 .main__list-description {
   font-family: "HKGrotesk", sans-serif;
   font-size: 16px;
   font-weight: 300;
 }
+@media (min-width: 320px) and (max-width: 639px) {
+  .main__list-description {
+    font-size: 0.75rem;
+  }
+}
+@media (min-width: 320px) and (max-width: 639px) {
+  .main__list-description {
+    font-size: 0.75rem;
+  }
+}
 .subscribe__appile-title {
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: 300;
   font-family: "HKGrotesk", sans-serif;
   color: #92a1a9;
+}
+@media (min-width: 320px) and (max-width: 639px) {
+  .subscribe__appile-title {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 320px) and (max-width: 639px) {
+  .subscribe__appile-title {
+    font-size: 1.5rem;
+  }
 }
 .subscribe__appile-text,
 .footer__copyright {
   font-weight: 300;
   font-family: "HKGrotesk", sans-serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   color: #92a1a9;
+}
+@media (min-width: 320px) and (max-width: 639px) {
+  .subscribe__appile-text,
+  .footer__copyright {
+    font-size: 0.75rem;
+  }
+}
+@media (min-width: 320px) and (max-width: 639px) {
+  .subscribe__appile-text,
+  .footer__copyright {
+    font-size: 0.75rem;
+  }
 }
 .subscribe__form-input,
 .subscribe__form-button {
-  padding: 16px 20px;
+  padding: 2% 3%;
+}
+.main__offer,
+.main__goods-item,
+.main__list-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.main__offer {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -moz-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  padding-left: 4%;
+  background-image: url(../img/Gina.jpg);
+}
+.first-good {
+  background-image: url(../img/Beoplay.jpg);
+}
+.second-good {
+  background-image: url(../img/Leica.png);
+}
+.main__offer,
+.first-good,
+.second-good,
+.first-item,
+.second-item,
+.third-item {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+@media (min-width: 320px) and (max-width: 639px) {
+  .main__offer,
+  .first-good,
+  .second-good,
+  .first-item,
+  .second-item,
+  .third-item {
+    height: 50vh;
+  }
+}
+@media (min-width: 320px) and (max-width: 639px) {
+  .main__offer,
+  .first-good,
+  .second-good,
+  .first-item,
+  .second-item,
+  .third-item {
+    height: 50vh;
+  }
+}
+.first-item {
+  background-image: url(../img/Molekule.png);
+}
+.second-item {
+  background-image: url(../img/Signature.png);
+}
+.third-item {
+  background-image: url(../img/DR-II.png);
 }

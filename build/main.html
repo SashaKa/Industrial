@@ -28,7 +28,7 @@
                 </ul>
             </div>
             <div class="header__search">
-                <input class="header__input-search" placeholder = " Search" type="text">
+                <input class="header__input-search" placeholder ="Search" type="text">
             </div>
         </header>
         <main class="main">
@@ -39,28 +39,28 @@
             </div> 
             <div class="main__goods">
                 <div class="main__goods-item first-good">
-                    <h2 class="main__goods-title">BEOPLAY A1</h2>
+                    <h2 class="main__goods-title">Beoplay A1</h2>
                     <p class="main__goods-description">The ultra-portable Bluetooth speaker that will travel with you anywhere</p>
                     <button class="button main__goods-button goods-button-for-sale">Buy</button>
                 </div>
-                <div class="main__goods-item">
-                    <h2 class="main__goods-title">Leica MP</h2>
+                <div class="main__goods-item second-good">
+                    <h2 class="main__goods-title ">Leica MP</h2>
                     <p class="main__goods-description">Focused technology for focused photography</p>
                     <button class=" button main__goods-button goods-button-for-sale">Buy</button>
                 </div>
             </div>
             <div class="main__list">
-                <div class="main__list-item">
+                <div class="main__list-item first-item">
                     <p class="main__list-description">The world’s first molecular air purifier.</p>
                     <h2 class="main__list-title">Molekule</h2>
                     <button class=" button main__list-button list-button-for-sale">Details</button>
                 </div>
-                <div class="main__list-item">
+                <div class="main__list-item second-item">
                     <p class="main__list-description">Bowers & Wilkins</p>
                     <h2 class="main__list-title">P9 Signature</h2>
                     <button class="button main__list-button list-button-for-sale">Details</button>
                 </div>
-                <div class="main__list-item">
+                <div class="main__list-item third-item">
                     <p class="main__list-description">An homage to Dieter Rams</p>
                     <h2 class="main__list-title">DR-II</h2>
                     <button class="button main__list-button list-button-for-sale">Details</button>
@@ -102,11 +102,11 @@
        const mobileMenu = document.querySelector('.menu__list-mobile')
 
        burger.addEventListener('click' , () => {
-           if(!burger.classList.contains('show-menu')) {
-               burger.classList.add('show-menu')
+           if(!burger.classList.contains('menu-on')) {
+               burger.classList.add('menu-on')
                mobileMenu.classList.add('show-menu')
-           } else if (burger.classList.contains('show-menu')) {
-               burger.classList.remove('show-menu')
+           } else if (burger.classList.contains('menu-on')) {
+               burger.classList.remove('menu-on')
                mobileMenu.classList.remove('show-menu')
            }
        })

@@ -8,21 +8,12 @@
     src: url(../fonts/league-spartan/LeagueSpartan-Bold.otf);
 }
 
-@background-color:hsl(223, 31%, 20%);
-@hover-color:  #82c9d8;
-@title-color: #fff;
-@text-color:  #92a1a9;
-@border-color: #eec9a2;
-@border-color-input:#63757e;
-@main-font: "HKGrotesk", sans-serif;
-@bold-font: 700;
-@normal-font: 300;
-@small-title: 18px;
-@normal-title: 24px;
-@midi-title: 36px;
-@large-title: 48px;
-@extra-title: 80px;
-
+// mixin for media quary
+.screen(@min, @max, @ruleset) {
+  @media (min-width: @min) and (max-width: (@max - 1)) {
+    @ruleset();
+  }
+}
 .bordered () {
     border-width: 3px;
     border-style: solid;
@@ -32,21 +23,37 @@
     }
 
 }
-.screen(@min, @max, @ruleset) {
-  @media (min-width: @min) and (max-width: (@max - 1)) {
-    @ruleset();
-  }
-}
+
+@background-color:hsl(223, 31%, 20%);
+@hover-color:  #82c9d8;
+@title-color: #fff;
+@text-color:  #92a1a9;
+@border-color: #eec9a2;
+@border-color-input:#63757e;
+@main-font: "HKGrotesk", sans-serif;
+@bold-font: 700;
+@normal-font: 300;
+@small-title: 1.125rem;
+@normal-title: 1.5rem;
+@midi-title:  2.25rem;
+@large-title: 3rem;
+@extra-title: 5rem;
+@btn-padding: 2% 3%;
 
 
+// STYLES
 
 * {
     box-sizing: border-box;
 }
 
+
+html { 
+    font-size: calc(16px + 0.25vw) 
+}
+
 body {
     background-color: @background-color;
-    font-size: 16px;
     font-family: @main-font;
     margin: 0 auto;
     line-height: normal;
@@ -55,11 +62,27 @@ body {
     margin: 0 auto;
     padding: 2% 9%;
 }
+.header {
+    display: flex;
+}
+.header__search {
+
+    .screen(320px, 640px, {
+        display: none;
+    });
+}
 .main {
     color: @title-color;
 }
+.header__logo {
+    .screen (320px, 640px, {
+        width: 60%;
+        margin-left: auto;
+        order: 1;
+  });
+}
 .burger {
-    width: 60px;
+    width: 50px;
     height: 45px;
     position: relative;
     -webkit-transform: rotate(0deg);
@@ -72,31 +95,17 @@ body {
     transition: .5s ease-in-out;
     cursor: pointer;
 
-    .show-menu {
+    .menu-on {
         display: block;
-
-            &:nth-child(2) {
-                width: 0%;
-                opacity: 0;
-            }
-            :nth-child(3) {
-                -webkit-transform: rotate(-45deg);
-                -moz-transform: rotate(-45deg);
-                -o-transform: rotate(-45deg);
-                transform: rotate(-45deg);
-                top: 39px;
-                left: 8px;
-                }
-
-    }
+    
 }
 .menu__stripe {
     display: block;
     position: absolute;
     height: 9px;
     width: 100%;
-    background: @border-color;
-    border-radius: 9px;
+    background: @hover-color;
+    border-radius: 2px;
     opacity: 1;
     right: 0;
     -webkit-transform: rotate(0deg);
@@ -130,21 +139,66 @@ body {
             transform-origin: left center;
             }
 
+    }
 }
-// .menu__list-mobile TODO
-    display: none;
+.burger .menu-on .menu__stripe {
+
+            &:nth-child(2) {
+                width: 0%;
+                opacity: 0;
+            }
+            :nth-child(3) {
+                -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                top: 39px;
+                left: 8px;
+                }
 }
+
+.menu__list-mobile{
+    visibility: hidden;
+    position: absolute;
+    background-color: @background-color;
+    top: 52px;
+    left: -200px;
+    width: 80vw;
+    padding: 15px 10px;
+    transition: left .3s;
+
+    .screen(320px, 425,{ 
+    
+    });
+
+}
+ .show-menu {
+        visibility: visible;
+        left: 0;
+        z-index: 2;
+    }
+
 
 
 
 .main__offer-title {
     font-size: @extra-title;
     font-family: "LeagueSpartan", sans-serif;
+    text-transform: uppercase;
+    padding-top: 20px;
+
+    .screen (320px, 640px, {
+       font-size: 4rem;
+  });
 }
 .main__offer-description {
     font-family: @main-font;
-    font-size: 32px;
+    font-size: 1.2rem;
     font-weight: @normal-font;
+    padding-bottom: 40px;
+
+    .screen (320px, 640px, {
+  });
 }
 
 .main__offer-button,
@@ -156,6 +210,9 @@ body {
     font-size: @normal-title;
     font-weight: @normal-font;
     
+    .screen (320px, 640px, {
+        font-size: @normal-title / 2;
+  });
 }
 .link {
     text-decoration: none;
@@ -178,11 +235,16 @@ body {
 
  }
 .main__offer-button{
-    padding: 18px 27px;
+    padding: @btn-padding;
 }
  .main__goods-title {
     font-family:  "LeagueSpartan", sans-serif;
-    font-size: @large-title;;
+    font-size: @large-title;
+        
+        .screen (320px, 640px, {
+        font-size: @large-title / 1.5;
+  });
+
  }
  .main__goods-button,
  .main__list-button,
@@ -191,25 +253,40 @@ body {
      font-family: "LeagueSpartan", sans-serif;
      font-weight: @bold-font;
      text-transform: uppercase;
-     padding:12px 16px ;
+     padding:@btn-padding ;
      
+     .screen (320px, 640px, {
+        font-size: @small-title / 1.5;
+  });
  }
  .main__list-title {
      font-size: @midi-title;
      font-family: "LeagueSpartan", sans-serif;
      text-transform: uppercase;
      font-weight: @bold-font;
+
+     .screen (320px, 640px, {
+        font-size: @midi-title / 1.5;
+  });
  }
  .main__list-description {
      font-family: @main-font;
      font-size: 16px;
      font-weight: @normal-font;
+
+     .screen (320px, 640px, {
+        font-size: @small-title / 1.5;
+  });
  }
  .subscribe__appile-title {
      font-size: @midi-title;
      font-weight: @normal-font;
      font-family: @main-font;
      color: @text-color;
+
+     .screen (320px, 640px, {
+        font-size: @midi-title / 1.5;
+  });
  }
 .subscribe__appile-text,
 .footer__copyright {
@@ -218,8 +295,59 @@ body {
      font-size: @small-title;
      color: @text-color;
 
+     .screen (320px, 640px, {
+        font-size: @small-title / 1.5;
+  });
+
  }
  .subscribe__form-input,
  .subscribe__form-button {
-     padding: 16px 20px;
+     padding: @btn-padding;
+ }
+.main__offer,
+.main__goods-item,
+.main__list-item {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.main__offer {
+    align-items: flex-start;
+    justify-content: space-around;
+    padding-left: 4%;   
+    background-image: url(../img/Gina.jpg) ;
+}
+
+
+
+ .first-good {
+    background-image: url(../img/Beoplay.jpg) ;
+ }
+ .second-good {
+     background-image: url(../img/Leica.png);
+ }
+.main__offer,
+.first-good,
+.second-good,
+.first-item,
+.second-item,
+.third-item {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    
+    .screen (320px, 640px, {
+        height: 50vh;
+        
+  });
+ }
+.first-item {
+    background-image: url(../img/Molekule.png);
+}
+.second-item {
+     background-image: url(../img/Signature.png);
+}
+ .third-item {
+     background-image: url(../img/DR-II.png);
  }

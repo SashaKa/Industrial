@@ -1,4 +1,4 @@
-@mobile: ~"screen and (min-width: 320px)";
+@mobile: 320px;
 @mobile-l:   425px;
 @breakpoint-mobile-hd:  640px;
 @breakpoint-phablet:    768px;
@@ -6,3 +6,9 @@
 @breakpoint-laptop:     1024px;
 @breakpoint-desktop:    1152px;
 @breakpoint-laptop-hd:  1280px;
+
+.screen(@min, @max, @ruleset) {
+  @media (min-width: @min) and (max-width: (@max - 1)) {
+    @ruleset();
+  }
+}
