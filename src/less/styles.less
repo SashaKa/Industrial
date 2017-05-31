@@ -17,11 +17,6 @@
 .bordered () {
     border-width: 3px;
     border-style: solid;
-
-    &:hover {
-        border-color: @hover-color;
-    }
-
 }
 
 @background-color:hsl(223, 31%, 20%);
@@ -31,7 +26,7 @@
 @border-color: #eec9a2;
 @border-color-input:#63757e;
 @main-font: "HKGrotesk", sans-serif;
-@bold-font: 700;
+@bold-font: bold;
 @normal-font: 300;
 @small-title: 1.125rem;
 @normal-title: 1.5rem;
@@ -94,6 +89,7 @@ body {
     -o-transition: .5s ease-in-out;
     transition: .5s ease-in-out;
     cursor: pointer;
+    margin-bottom: 30px;
 
     .menu-on {
         display: block;
@@ -186,6 +182,7 @@ body {
     font-family: "LeagueSpartan", sans-serif;
     text-transform: uppercase;
     padding-top: 20px;
+    font-weight: @bold-font;
 
     .screen (320px, 640px, {
        font-size: 4rem;
@@ -211,7 +208,7 @@ body {
     font-weight: @normal-font;
     
     .screen (320px, 640px, {
-        font-size: @normal-title / 2;
+        font-size: @small-title;
   });
 }
 .link {
@@ -227,19 +224,20 @@ body {
      color: @title-color;
      transition: all 0.6s ease-in-out;
      .bordered;
-
-        &:hover {
-            color: @hover-color;
-
-        }
-
+     border-color: @border-color;
  }
 .main__offer-button{
     padding: @btn-padding;
+    &:hover {
+            color: @hover-color;
+            border-color: @hover-color;
+        }
 }
  .main__goods-title {
     font-family:  "LeagueSpartan", sans-serif;
     font-size: @large-title;
+    font-weight: @bold-font;
+    text-transform: uppercase;
         
         .screen (320px, 640px, {
         font-size: @large-title / 1.5;
@@ -256,14 +254,19 @@ body {
      padding:@btn-padding ;
      
      .screen (320px, 640px, {
-        font-size: @small-title / 1.5;
+        
   });
+  &:hover {
+            color: @hover-color;
+            border-color: @hover-color;
+        }
  }
  .main__list-title {
      font-size: @midi-title;
      font-family: "LeagueSpartan", sans-serif;
      text-transform: uppercase;
      font-weight: @bold-font;
+     padding: 10% 0;
 
      .screen (320px, 640px, {
         font-size: @midi-title / 1.5;
@@ -273,43 +276,17 @@ body {
      font-family: @main-font;
      font-size: 16px;
      font-weight: @normal-font;
+     
 
      .screen (320px, 640px, {
-        font-size: @small-title / 1.5;
+        
   });
- }
- .subscribe__appile-title {
-     font-size: @midi-title;
-     font-weight: @normal-font;
-     font-family: @main-font;
-     color: @text-color;
-
-     .screen (320px, 640px, {
-        font-size: @midi-title / 1.5;
-  });
- }
-.subscribe__appile-text,
-.footer__copyright {
-     font-weight: @normal-font;
-     font-family: @main-font;
-     font-size: @small-title;
-     color: @text-color;
-
-     .screen (320px, 640px, {
-        font-size: @small-title / 1.5;
-  });
-
- }
- .subscribe__form-input,
- .subscribe__form-button {
-     padding: @btn-padding;
  }
 .main__offer,
 .main__goods-item,
 .main__list-item {
     display: flex;
     flex-direction: column;
-    
 }
 
 .main__offer {
@@ -318,14 +295,24 @@ body {
     padding-left: 4%;   
     background-image: url(../img/Gina.jpg) ;
 }
+.main__goods-item {
+    padding-top: 10%;
 
-
-
+}
+.main__goods-description {
+        padding: 10% 0;
+}
  .first-good {
     background-image: url(../img/Beoplay.jpg) ;
+    padding-right: 5%;
+    text-align: right;
+    align-items: flex-end;
  }
  .second-good {
      background-image: url(../img/Leica.png);
+     text-align: left;
+     padding-left: 5%;
+     align-items: flex-start;
  }
 .main__offer,
 .first-good,
@@ -342,12 +329,74 @@ body {
         
   });
  }
+ .main__list-item {
+    padding: 10%  5%;
+    align-items: center;
+ }
 .first-item {
     background-image: url(../img/Molekule.png);
 }
 .second-item {
      background-image: url(../img/Signature.png);
+     justify-content: flex-end;
 }
  .third-item {
      background-image: url(../img/DR-II.png);
  }
+ .subscribe {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+ }
+
+
+ .subscribe__appile-title {
+     font-size: @midi-title;
+     font-weight: @normal-font;
+     font-family: @main-font;
+     color: @text-color;
+     padding: 10% 0;
+
+
+     .screen (320px, 640px, {
+        font-size: @midi-title / 1.5;
+  });
+ }
+.subscribe__appile-text,
+.footer__copyright {
+    font-weight: @normal-font;
+    font-family: @main-font;
+    font-size: @small-title;
+    color: @text-color;
+    padding-bottom: 10%;
+
+
+ }
+ .subscribe__form {
+    display: flex;
+    flex-direction: column;
+
+    .subscribe__form-input,
+    .subscribe__form-button {
+        padding: @btn-padding;
+        .bordered();
+        border-color: @border-color-input;
+        text-align: center;
+    }
+    .subscribe__form-input{
+        background: transparent;
+
+    }
+    .subscribe__form-button{
+        margin: 10px 0;
+    }
+ }
+.footer__menu {
+
+     .screen (320px, 640px, {
+        display: none;
+  });
+}
+.footer__copyright {
+    text-align: center;
+}
