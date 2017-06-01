@@ -7,6 +7,8 @@
 @breakpoint-desktop:    1152px;
 @breakpoint-laptop-hd:  1280px;
 
+
+// mixin for media quary
 .screen(@min, @max, @ruleset) {
   @media (min-width: @min) and (max-width: (@max - 1)) {
     @ruleset();

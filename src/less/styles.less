@@ -76,7 +76,7 @@ body {
         order: 1;
   });
 }
-.burger {
+.menu__burger {
     width: 50px;
     height: 45px;
     position: relative;
@@ -91,8 +91,8 @@ body {
     cursor: pointer;
     margin-bottom: 30px;
 
-    .menu-on {
-        display: block;
+    // .menu-on {
+    //     display: block;
     
 }
 .menu__stripe {
@@ -136,7 +136,7 @@ body {
             }
 
     }
-}
+
 .burger .menu-on .menu__stripe {
 
             &:nth-child(2) {
@@ -167,14 +167,20 @@ body {
     
     });
 
-}
- .show-menu {
-        visibility: visible;
-        left: 0;
-        z-index: 2;
+    .menu__link  {
+         &:hover {
+            color: @hover-color;
     }
-
-
+}
+}
+.show-menu {
+        visibility: visible;
+        left: 9%;
+        z-index: 2;
+ }
+.menu__item {
+        margin: 15px 0;
+}
 
 
 .main__offer-title {
@@ -215,9 +221,6 @@ body {
     text-decoration: none;
     color: @text-color;
     transition: all 0.6s ease-in-out;
-    &:hover {
-        color: @title-color;
-    }
 }
  .button {
      background-color: transparent;

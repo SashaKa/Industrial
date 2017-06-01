@@ -15,10 +15,12 @@
             <div class="header__logo">
                 <img src="img/logo.svg" alt="logo">
             </div>
-            <div class="menu__mobile burger ">
-                <span class="menu__stripe"></span>
-                <span class="menu__stripe"></span>
-                <span class="menu__stripe"></span>
+            <div class="menu__mobile">
+                <div class="menu__burger">
+                    <span class="menu__stripe"></span>
+                    <span class="menu__stripe"></span>
+                    <span class="menu__stripe"></span>
+                </div>
                 <ul class="menu__list-mobile">
                     <li class="menu__item"><a href="#" class=" link menu__link">About</a></li>
                     <li class="menu__item"><a href="#" class="link menu__link">Search</a></li>
@@ -98,7 +100,7 @@
         </footer>
     </div>
     <script>
-       const burger = document.querySelector( '.burger')
+       const burger = document.querySelector( '.menu__burger')
        const mobileMenu = document.querySelector('.menu__list-mobile')
 
        burger.addEventListener('click' , () => {
