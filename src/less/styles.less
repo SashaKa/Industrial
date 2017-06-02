@@ -64,35 +64,43 @@ body {
     justify-content: space-between;
 }
 .header__search {
-
-    .header__input-search {
-        flex: 1;
-        background: transparent;
         position: relative;
-        border: none;
-    
+
         &::after {
             position: absolute;
             content: "";
             width: 100%;
-            height: 2px;
-            color: @border-color-input;
-            bottom: 0;
-            left: 0;
+            height: 3px;
+            background-color: @border-color-input;
+            bottom: -8px;
+            left: -28px;
             }
         &::before {
             position: absolute;
             content: "";
             width: 22px;
             height: 23px;
-            background: url('../img/logo.svg') no-repeat center;
+            left: -26px;
+            bottom: 2px;
+            background-image: url('../img/search.svg'); background-repeat:no-repeat;
+            background-position: center center;
+
         }
-    }
-    .screen(320px, 640px, {
-        display: none;
-    });
 
 }
+    .header__input-search {
+        flex: 1;
+        background: transparent;
+        border: none;
+        color: @border-color-input;
+        outline: none;
+        transition: all .1s linear;
+
+        // &:focus {
+        //     background-color: @hover-color;
+        //     transform: translateY(1px);
+        // }
+    }
 .main {
     color: @title-color;
 }
@@ -255,6 +263,7 @@ body {
      transition: all 0.6s ease-in-out;
      .bordered;
      border-color: @border-color;
+     outline: none;
  }
 .main__offer-button{
     padding: @btn-padding;
@@ -362,6 +371,10 @@ body {
  .main__list-item {
     padding: 3%  5%;
     align-items: center;
+    .screen(640px, 768px, {
+        height: 70vh;
+        padding-top: 10%;
+    });
  }
 .first-item {
     background-image: url(../img/Molekule.png);
@@ -391,6 +404,10 @@ body {
      .screen (320px, 640px, {
         font-size: @midi-title / 1.5;
   });
+  .screen(640px, 768px, {
+        padding: 3% 0;
+    
+    });
  }
 .subscribe__appile-text,
 .footer__copyright {
@@ -419,6 +436,7 @@ body {
     }
     .subscribe__form-button{
         margin: 10px 0;
+        padding: 10px 0;
     }
  }
 .footer__menu {

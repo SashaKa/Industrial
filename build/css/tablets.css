@@ -36,41 +36,41 @@ body {
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
-.header__search .header__input-search {
+.header__search {
+  position: relative;
+}
+.header__search::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: #63757e;
+  bottom: -8px;
+  left: -28px;
+}
+.header__search::before {
+  position: absolute;
+  content: "";
+  width: 22px;
+  height: 23px;
+  left: -26px;
+  bottom: 2px;
+  background-image: url('../img/search.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.header__input-search {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   -moz-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
   background: transparent;
-  position: relative;
   border: none;
-}
-.header__search .header__input-search::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 2px;
   color: #63757e;
-  bottom: 0;
-  left: 0;
-}
-.header__search .header__input-search::before {
-  position: absolute;
-  content: "";
-  width: 22px;
-  height: 23px;
-  background: url('../img/logo.svg') no-repeat center;
-}
-@media (min-width: 320px) and (max-width: 639px) {
-  .header__search {
-    display: none;
-  }
-}
-@media (min-width: 320px) and (max-width: 639px) {
-  .header__search {
-    display: none;
-  }
+  outline: none;
+  -moz-transition: all .1s linear;
+  transition: all .1s linear;
 }
 .main {
   color: #fff;
@@ -245,6 +245,7 @@ body {
   border-width: 3px;
   border-style: solid;
   border-color: #eec9a2;
+  outline: none;
 }
 .main__offer-button {
   padding: 2% 3%;
@@ -398,6 +399,18 @@ body {
   -ms-flex-align: center;
   align-items: center;
 }
+@media (min-width: 640px) and (max-width: 767px) {
+  .main__list-item {
+    height: 70vh;
+    padding-top: 10%;
+  }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .main__list-item {
+    height: 70vh;
+    padding-top: 10%;
+  }
+}
 .first-item {
   background-image: url(../img/Molekule.png);
 }
@@ -444,6 +457,16 @@ body {
     font-size: 1.5rem;
   }
 }
+@media (min-width: 640px) and (max-width: 767px) {
+  .subscribe__appile-title {
+    padding: 3% 0;
+  }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .subscribe__appile-title {
+    padding: 3% 0;
+  }
+}
 .subscribe__appile-text,
 .footer__copyright {
   font-weight: 300;
@@ -479,6 +502,7 @@ body {
 }
 .subscribe__form .subscribe__form-button {
   margin: 10px 0;
+  padding: 10px 0;
 }
 @media (min-width: 320px) and (max-width: 639px) {
   .footer__menu {
@@ -527,4 +551,162 @@ body {
   color: #63757e;
   bottom: 0;
   left: 0;
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .main__offer {
+    margin: 20px 0;
+    height: 80vh;
+  }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .main__offer {
+    margin: 20px 0;
+    height: 80vh;
+  }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .main__offer-description {
+    width: 40%;
+  }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .main__offer-description {
+    width: 40%;
+  }
+}
+.main__offer-button {
+  margin-bottom: 10%;
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .main__goods-item {
+    height: 80vh;
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .main__goods-item {
+    height: 80vh;
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .main__goods-description {
+    font-size: 1.25rem;
+    width: 77%;
+  }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .main__goods-description {
+    font-size: 1.25rem;
+    width: 77%;
+  }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .main__list-item {
+    height: 70vh;
+    padding-top: 10%;
+    margin: 20px 0;
+  }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .main__list-item {
+    height: 70vh;
+    padding-top: 10%;
+    margin: 20px 0;
+  }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .subscribe__appile-title {
+    padding: 3% 0;
+  }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .subscribe__appile-title {
+    padding: 3% 0;
+  }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .subscribe__form {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+  }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .subscribe__form {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+  }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .menu__list {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -moz-box-orient: horizontal;
+    -moz-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 5%;
+  }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .menu__list {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -moz-box-orient: horizontal;
+    -moz-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 5%;
+  }
+}
+.menu__item {
+  position: relative;
+}
+.menu__item::after {
+  position: absolute;
+  content: "";
+  width: 3px;
+  height: 3px;
+  background-color: #92a1a9;
+  border-radius: 50%;
+  top: 50%;
+  right: -23px;
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .footer__copyright {
+    padding: 10% 0;
+  }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .footer__copyright {
+    padding: 10% 0;
+  }
 }
