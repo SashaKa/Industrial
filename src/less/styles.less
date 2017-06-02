@@ -1,4 +1,6 @@
 @import url(brakepoints.less);
+@import url(tablets.less);
+
 @font-face {
     font-family: "HKGrotesk", sans-serif;
     src: url(../fonts/hk-grotesk/HKGrotesk-Light.otf);
@@ -59,12 +61,37 @@ body {
 }
 .header {
     display: flex;
+    justify-content: space-between;
 }
 .header__search {
 
+    .header__input-search {
+        flex: 1;
+        background: transparent;
+        position: relative;
+        border: none;
+    
+        &::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 2px;
+            color: @border-color-input;
+            bottom: 0;
+            left: 0;
+            }
+        &::before {
+            position: absolute;
+            content: "";
+            width: 22px;
+            height: 23px;
+            background: url('../img/logo.svg') no-repeat center;
+        }
+    }
     .screen(320px, 640px, {
         display: none;
     });
+
 }
 .main {
     color: @title-color;
@@ -157,10 +184,10 @@ body {
     visibility: hidden;
     position: absolute;
     background-color: @background-color;
-    top: 52px;
+    top: 81px;
     left: -200px;
-    width: 80vw;
-    padding: 15px 10px;
+    width: 94vw;
+    padding: 33px 32%;
     transition: left .3s;
 
     .screen(320px, 425,{ 
@@ -220,7 +247,7 @@ body {
 .link {
     text-decoration: none;
     color: @text-color;
-    transition: all 0.6s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
  .button {
      background-color: transparent;
@@ -333,7 +360,7 @@ body {
   });
  }
  .main__list-item {
-    padding: 10%  5%;
+    padding: 3%  5%;
     align-items: center;
  }
 .first-item {

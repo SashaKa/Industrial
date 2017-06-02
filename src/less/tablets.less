@@ -1,0 +1,32 @@
+@import url(styles.less);
+
+
+
+
+.menu__mobile {
+
+    .screen(640px, 768px, {
+        display: none;
+    });
+}
+
+.header__search {
+    align-self: center;
+    
+     .header__input-search {
+        flex: 1;
+        background: transparent;
+        position: relative;
+        border: none;
+    
+        &::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 2px;
+            color: @border-color-input;
+            bottom: 0;
+            left: 0;
+            }
+    }
+}
