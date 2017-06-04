@@ -1,5 +1,5 @@
-@import url(brakepoints.less);
-@import url(tablets.less);
+
+
 
 @font-face {
     font-family: "HKGrotesk", sans-serif;
@@ -10,17 +10,10 @@
     src: url(../fonts/league-spartan/LeagueSpartan-Bold.otf);
 }
 
-// mixin for media quary
-.screen(@min, @max, @ruleset) {
-  @media (min-width: @min) and (max-width: (@max - 1)) {
-    @ruleset();
-  }
-}
 .bordered () {
     border-width: 3px;
     border-style: solid;
 }
-
 @background-color:hsl(223, 31%, 20%);
 @hover-color:  #82c9d8;
 @title-color: #fff;
@@ -36,6 +29,14 @@
 @large-title: 3rem;
 @extra-title: 5rem;
 @btn-padding: 2% 3%;
+
+// mixin for media quary
+.screen(@min, @max, @ruleset) {
+  @media (min-width: @min) and (max-width: (@max - 1)) {
+    @ruleset();
+  }
+}
+
 
 
 // STYLES
@@ -65,6 +66,28 @@ body {
 }
 .header__search {
         position: relative;
+         align-self: center;
+
+         .screen(320px, 640px, {
+        display: none;
+    });
+
+          .header__input-search {
+        flex: 1;
+        background: transparent;
+        position: relative;
+        border: none;
+    
+        &::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 2px;
+            color: @border-color-input;
+            bottom: 0;
+            left: 0;
+            }
+    }
 
         &::after {
             position: absolute;
@@ -95,11 +118,6 @@ body {
         color: @border-color-input;
         outline: none;
         transition: all .1s linear;
-
-        // &:focus {
-        //     background-color: @hover-color;
-        //     transform: translateY(1px);
-        // }
     }
 .main {
     color: @title-color;
@@ -126,8 +144,6 @@ body {
     cursor: pointer;
     margin-bottom: 30px;
 
-    // .menu-on {
-    //     display: block;
     
 }
 .menu__stripe {
@@ -174,34 +190,46 @@ body {
 
 .burger .menu-on .menu__stripe {
 
-            &:nth-child(2) {
-                width: 0%;
-                opacity: 0;
-            }
-            :nth-child(3) {
-                -webkit-transform: rotate(-45deg);
-                -moz-transform: rotate(-45deg);
-                -o-transform: rotate(-45deg);
-                transform: rotate(-45deg);
-                top: 39px;
-                left: 8px;
-                }
+    &:nth-child(2) {
+        width: 0%;
+        opacity: 0;
+    }
+    :nth-child(3) {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        top: 39px;
+        left: 8px;
+    }
+}
+.menu__mobile {
+     display: none;
+      .screen (320px, 640px, {
+          display:block;
+  });
+}
+
+.menu__list {
+    .screen(640px, 768px, {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 5%; 
+        
+    });
 }
 
 .menu__list-mobile{
-    visibility: hidden;
+     visibility: hidden;
     position: absolute;
     background-color: @background-color;
-    top: 81px;
+    top: 78px;
     left: -200px;
-    width: 94vw;
-    padding: 33px 32%;
+    width: 90vw;
+    padding: 15px 10px;
     transition: left .3s;
-
-    .screen(320px, 425,{ 
-    
-    });
-
     .menu__link  {
          &:hover {
             color: @hover-color;
@@ -215,33 +243,51 @@ body {
  }
 .menu__item {
         margin: 15px 0;
+         position: relative;
+
 }
+.menu__link {
+
+    ::after {
+        position: absolute;
+        content: "";
+        width: 3px;
+        height: 3px;
+        background-color: @text-color;
+        border-radius: 50%;
+        top: 50%;
+        right: -23px;
+    }
+         &::after:last-child {
+             display: none;
+         } 
+        
+    }
 
 
-.main__offer-title {
-    font-size: @extra-title;
-    font-family: "LeagueSpartan", sans-serif;
-    text-transform: uppercase;
-    padding-top: 20px;
-    font-weight: @bold-font;
 
-    .screen (320px, 640px, {
-       font-size: 4rem;
-  });
-}
-.main__offer-description {
-    font-family: @main-font;
-    font-size: 1.2rem;
-    font-weight: @normal-font;
-    padding-bottom: 40px;
+ .main__goods-button,
+ .main__list-button,
+ .subscribe__form-button {
+     font-size: @small-title;
+     font-family: "LeagueSpartan", sans-serif;
+     font-weight: @bold-font;
+     text-transform: uppercase;
+     padding:@btn-padding ;
+     
+  &:hover {
+            color: @hover-color;
+            border-color: @hover-color;
+        }
 
-    .screen (320px, 640px, {
-  });
-}
+    &:last-child:hover {
+        color: @border-color-input;
+        border-color: @border-color-input;
+    }
+ }
 
 .main__offer-button,
 .subscribe__form-input,
-.main__offer-button,
 .main__goods-description,
 .menu__link {
     font-family: @main-font;
@@ -265,12 +311,66 @@ body {
      border-color: @border-color;
      outline: none;
  }
+.main__offer,
+.main__goods-item,
+.main__list-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.main__offer {
+    align-items: flex-start;
+    justify-content: space-around;
+    padding-left: 4%;   
+    background-image: url(../img/Gina.jpg) ;
+    height: 80vh;
+
+    .screen(640px, 960px, {
+        margin: 20px 0;
+    });
+}
+.main__offer-title {
+    font-size: @extra-title;
+    font-family: "LeagueSpartan", sans-serif;
+    text-transform: uppercase;
+    padding-top: 20px;
+    font-weight: @bold-font;
+
+    .screen (320px, 640px, {
+       font-size: 4rem;
+  });
+  .screen (1024px, 1920px, {
+       padding-top: 60px;
+  });
+
+}
+.main__offer-description {
+    font-family: @main-font;
+    font-size: 32px;
+    font-weight: @normal-font;
+    padding-bottom: 40px;
+    width: 30%;
+
+     .screen (320px, 640px, {
+       font-size: 1.2rem;
+       width: 60%;
+  });
+
+    .screen(640px, 960px, {
+        width: 62%;
+    });
+   
+}
 .main__offer-button{
     padding: @btn-padding;
+    margin-bottom: 10%;
     &:hover {
             color: @hover-color;
             border-color: @hover-color;
         }
+        .screen(960px, 1920px {
+        margin-bottom: 0;
+    });
 }
  .main__goods-title {
     font-family:  "LeagueSpartan", sans-serif;
@@ -282,23 +382,6 @@ body {
         font-size: @large-title / 1.5;
   });
 
- }
- .main__goods-button,
- .main__list-button,
- .subscribe__form-button {
-     font-size: @small-title;
-     font-family: "LeagueSpartan", sans-serif;
-     font-weight: @bold-font;
-     text-transform: uppercase;
-     padding:@btn-padding ;
-     
-     .screen (320px, 640px, {
-        
-  });
-  &:hover {
-            color: @hover-color;
-            border-color: @hover-color;
-        }
  }
  .main__list-title {
      font-size: @midi-title;
@@ -321,25 +404,24 @@ body {
         
   });
  }
-.main__offer,
-.main__goods-item,
-.main__list-item {
-    display: flex;
-    flex-direction: column;
-}
 
-.main__offer {
-    align-items: flex-start;
-    justify-content: space-around;
-    padding-left: 4%;   
-    background-image: url(../img/Gina.jpg) ;
-}
 .main__goods-item {
     padding-top: 10%;
+
+    .screen(640px, 768px, {
+        height: 80vh;
+        margin-bottom: 20px;
+    });
 
 }
 .main__goods-description {
         padding: 10% 0;
+
+        .screen(640px, 768px, {
+        font-size: 1.25rem;
+        width: 77%;
+    
+    });
 }
  .first-good {
     background-image: url(../img/Beoplay.jpg) ;
@@ -371,9 +453,11 @@ body {
  .main__list-item {
     padding: 3%  5%;
     align-items: center;
+
     .screen(640px, 768px, {
         height: 70vh;
         padding-top: 10%;
+        margin: 20px 0;
     });
  }
 .first-item {
@@ -385,6 +469,8 @@ body {
 }
  .third-item {
      background-image: url(../img/DR-II.png);
+
+
  }
  .subscribe {
     display: flex;
@@ -408,6 +494,7 @@ body {
         padding: 3% 0;
     
     });
+   
  }
 .subscribe__appile-text,
 .footer__copyright {
@@ -438,6 +525,10 @@ body {
         margin: 10px 0;
         padding: 10px 0;
     }
+    .screen(640px, 768px, {
+        align-self:center;
+    
+    });
  }
 .footer__menu {
 
@@ -447,4 +538,8 @@ body {
 }
 .footer__copyright {
     text-align: center;
+
+     .screen(640px, 768px, {
+        padding: 10% 0;
+    });
 }
