@@ -22,7 +22,7 @@ body {
 }
 .site-wrapper {
   margin: 0 auto;
-  padding: 2% 9%;
+  padding: 2% 5%;
 }
 .header {
   display: -webkit-box;
@@ -250,7 +250,7 @@ body {
   font-family: "LeagueSpartan", sans-serif;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 2% 3%;
+  padding: 10px 30px;
 }
 .main__goods-button:hover,
 .main__list-button:hover,
@@ -324,6 +324,7 @@ body {
   padding-left: 4%;
   background-image: url(../img/Gina.jpg);
   height: 80vh;
+  margin: 30px 0;
 }
 @media (min-width: 640px) and (max-width: 959px) {
   .main__offer {
@@ -352,7 +353,7 @@ body {
   font-size: 32px;
   font-weight: 300;
   padding-bottom: 40px;
-  width: 30%;
+  width: 36%;
 }
 @media (min-width: 320px) and (max-width: 639px) {
   .main__offer-description {
@@ -360,13 +361,13 @@ body {
     width: 60%;
   }
 }
-@media (min-width: 640px) and (max-width: 959px) {
+@media (min-width: 640px) and (max-width: 1023px) {
   .main__offer-description {
     width: 62%;
   }
 }
 .main__offer-button {
-  padding: 2% 3%;
+  padding: 10px 30px;
   margin-bottom: 10%;
 }
 .main__offer-button:hover {
@@ -406,8 +407,35 @@ body {
   font-size: 16px;
   font-weight: 300;
 }
+.main__goods {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 .main__goods-item {
-  padding-top: 10%;
+  padding-top: 5%;
+  width: 50%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -moz-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  height: 55vh;
+  margin: 10px 0 15px 0;
 }
 @media (min-width: 640px) and (max-width: 767px) {
   .main__goods-item {
@@ -416,33 +444,39 @@ body {
   }
 }
 .main__goods-description {
-  padding: 10% 0;
+  font-size: 24px;
+  padding: 10px 0 20px 0;
 }
 @media (min-width: 640px) and (max-width: 767px) {
   .main__goods-description {
     font-size: 1.25rem;
+    padding: 10% 0;
     width: 77%;
   }
 }
 .first-good {
   background-image: url(../img/Beoplay.jpg);
-  padding-right: 5%;
+  padding-right: 3%;
   text-align: right;
   -webkit-box-align: end;
   -webkit-align-items: flex-end;
   -moz-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end;
+  margin-right: 30px;
 }
 .second-good {
   background-image: url(../img/Leica.png);
   text-align: left;
-  padding-left: 5%;
+  padding-left: 3%;
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
   -moz-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
+}
+.main__goods-button {
+  margin-top: 20px;
 }
 .main__offer,
 .first-good,
@@ -464,13 +498,29 @@ body {
     height: 50vh;
   }
 }
+.main__list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
 .main__list-item {
-  padding: 3%  5%;
+  padding: 3%  2%;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -moz-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  width: 33%;
+  height: 55vh;
+  margin: 10px 20px 10px 0;
+  text-align: center;
 }
 @media (min-width: 640px) and (max-width: 767px) {
   .main__list-item {
@@ -492,6 +542,7 @@ body {
 }
 .third-item {
   background-image: url(../img/DR-II.png);
+  margin-right: 0;
 }
 .subscribe {
   display: -webkit-box;
@@ -509,11 +560,12 @@ body {
   text-align: center;
 }
 .subscribe__appile-title {
-  font-size: 2.25rem;
+  font-size: 36px;
   font-weight: 300;
   font-family: "HKGrotesk", sans-serif;
   color: #92a1a9;
-  padding: 10% 0;
+  padding-bottom: 20px;
+  padding-top: 10%;
 }
 @media (min-width: 320px) and (max-width: 639px) {
   .subscribe__appile-title {
@@ -533,6 +585,9 @@ body {
   color: #92a1a9;
   padding-bottom: 10%;
 }
+.subscribe__appile-text {
+  padding: 20px 50px 40px;
+}
 .subscribe__form {
   display: -webkit-box;
   display: -webkit-flex;
@@ -546,24 +601,28 @@ body {
   -moz-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
 }
 .subscribe__form .subscribe__form-input,
 .subscribe__form .subscribe__form-button {
-  padding: 2% 3%;
+  padding: 10px 30px;
+  margin-top: 30px;
   border-width: 3px;
   border-style: solid;
   border-color: #63757e;
   text-align: center;
 }
-.subscribe__form .subscribe__form-input {
+.subscribe__form-input {
   background: transparent;
 }
-.subscribe__form .subscribe__form-button {
+.subscribe__form-button {
   margin: 10px 0;
   padding: 10px 0;
 }
 @media (min-width: 640px) and (max-width: 767px) {
-  .subscribe__form {
+  .subscribe__form-button {
     -webkit-align-self: center;
     -ms-flex-item-align: center;
     -ms-grid-row-align: center;

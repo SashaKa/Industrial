@@ -28,7 +28,7 @@
 @midi-title:  2.25rem;
 @large-title: 3rem;
 @extra-title: 5rem;
-@btn-padding: 2% 3%;
+@btn-padding:10px 30px;
 
 // mixin for media quary
 .screen(@min, @max, @ruleset) {
@@ -58,7 +58,7 @@ body {
 }
 .site-wrapper {
     margin: 0 auto;
-    padding: 2% 9%;
+    padding: 2% 5%;
 }
 .header {
     display: flex;
@@ -324,6 +324,7 @@ body {
     padding-left: 4%;   
     background-image: url(../img/Gina.jpg) ;
     height: 80vh;
+    margin: 30px 0;
 
     .screen(640px, 960px, {
         margin: 20px 0;
@@ -349,14 +350,14 @@ body {
     font-size: 32px;
     font-weight: @normal-font;
     padding-bottom: 40px;
-    width: 30%;
+    width: 36%;
 
      .screen (320px, 640px, {
        font-size: 1.2rem;
        width: 60%;
   });
 
-    .screen(640px, 960px, {
+    .screen(640px, 1024px, {
         width: 62%;
     });
    
@@ -404,9 +405,18 @@ body {
         
   });
  }
+ .main__goods {
+     display: flex;
+ }
 
 .main__goods-item {
-    padding-top: 10%;
+    padding-top: 5%;
+    width: 50%;
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-start;
+    height: 55vh;
+    margin: 10px 0 15px 0;
 
     .screen(640px, 768px, {
         height: 80vh;
@@ -415,25 +425,31 @@ body {
 
 }
 .main__goods-description {
-        padding: 10% 0;
+        font-size: 24px;
+        padding: 10px 0 20px 0;
 
         .screen(640px, 768px, {
         font-size: 1.25rem;
+        padding: 10% 0;
         width: 77%;
     
     });
 }
  .first-good {
     background-image: url(../img/Beoplay.jpg) ;
-    padding-right: 5%;
+    padding-right: 3%;
     text-align: right;
     align-items: flex-end;
+    margin-right: 30px;
  }
  .second-good {
-     background-image: url(../img/Leica.png);
-     text-align: left;
-     padding-left: 5%;
-     align-items: flex-start;
+    background-image: url(../img/Leica.png);
+    text-align: left;
+    padding-left: 3%;
+    align-items: flex-start;    
+ }
+ .main__goods-button {
+     margin-top: 20px;
  }
 .main__offer,
 .first-good,
@@ -450,9 +466,17 @@ body {
         
   });
  }
+ .main__list {
+     display: flex;
+     justify-content: space-between;
+ }
  .main__list-item {
-    padding: 3%  5%;
+    padding: 3%  2%;
     align-items: center;
+    width: 33%;
+    height: 55vh;
+    margin: 10px 20px 10px 0;
+    text-align: center;
 
     .screen(640px, 768px, {
         height: 70vh;
@@ -469,7 +493,7 @@ body {
 }
  .third-item {
      background-image: url(../img/DR-II.png);
-
+     margin-right: 0;
 
  }
  .subscribe {
@@ -480,11 +504,12 @@ body {
 
 
  .subscribe__appile-title {
-     font-size: @midi-title;
+     font-size: 36px;
      font-weight: @normal-font;
      font-family: @main-font;
      color: @text-color;
-     padding: 10% 0;
+     padding-bottom: 20px;
+    padding-top: 10%;
 
 
      .screen (320px, 640px, {
@@ -506,17 +531,23 @@ body {
 
 
  }
+ .subscribe__appile-text {
+         padding: 20px 50px 40px;
+ }
  .subscribe__form {
     display: flex;
     flex-direction: column;
+    align-self: center;
 
     .subscribe__form-input,
     .subscribe__form-button {
         padding: @btn-padding;
+        margin-top: 30px;
         .bordered();
         border-color: @border-color-input;
         text-align: center;
     }
+}
     .subscribe__form-input{
         background: transparent;
 
@@ -524,7 +555,7 @@ body {
     .subscribe__form-button{
         margin: 10px 0;
         padding: 10px 0;
-    }
+    
     .screen(640px, 768px, {
         align-self:center;
     
