@@ -24,7 +24,8 @@
     "gulp-less": "^3.3.0",
     "gulp-load-plugins": "^1.5.0",
     "gulp-plumber": "^1.1.0",
-    "gulp-util": "^3.0.8"
+    "gulp-util": "^3.0.8",
+    "normalize.css": "^7.0.0"
   },
   "devDependencies": {
     "less-plugin-sass2less": "^1.1.0"

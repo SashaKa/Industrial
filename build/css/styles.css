@@ -9,16 +9,28 @@
 * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  -moz-transition: color 0.3s, background-color 0.3s;
+  transition: color 0.3s, background-color 0.3s;
 }
 html {
   font-size: -moz-calc(16.25px);
   font-size: calc(16.25px);
 }
+@media (min-width: 320px) and (max-width: 1365px) {
+  html {
+    font-size: -moz-calc(15.15869981px);
+    font-size: calc(15.15869981px);
+  }
+}
+@media (min-width: 1366px) and (max-width: 1929px) {
+  html {
+    font-size: 20px;
+  }
+}
 body {
   background-color: #232c43;
-  font-family: "HKGrotesk", sans-serif;
   margin: 0 auto;
-  line-height: normal;
+  line-height: 1.5;
 }
 .site-wrapper {
   margin: 0 auto;
@@ -415,7 +427,6 @@ body {
 }
 .main__list-description {
   font-family: "HKGrotesk", sans-serif;
-  font-size: 16px;
   font-weight: 300;
 }
 .main__goods {
@@ -425,7 +436,7 @@ body {
   display: -ms-flexbox;
   display: flex;
 }
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 959px) {
   .main__goods {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -437,7 +448,8 @@ body {
   }
 }
 .main__goods-item {
-  padding-top: 5%;
+  padding: 5%;
+  padding-top: 1%;
   width: 50%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -451,15 +463,13 @@ body {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -moz-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
   height: 55vh;
   margin: 10px 0 15px 0;
 }
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 959px) {
   .main__goods-item {
     width: 90vw;
     height: 70vh;
@@ -470,14 +480,8 @@ body {
     margin-bottom: 20px;
   }
 }
-.main__goods-description {
-  font-size: 24px;
-  padding: 10px 0 20px 0;
-}
 @media (min-width: 640px) and (max-width: 767px) {
   .main__goods-description {
-    font-size: 1.25rem;
-    padding: 10% 0;
     width: 77%;
   }
 }

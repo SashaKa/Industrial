@@ -30,7 +30,7 @@
 @extra-title: 5rem;
 @btn-padding:10px 30px;
 
-// mixin for media quary
+// mixin for media query
 .screen(@min, @max, @ruleset) {
   @media (min-width: @min) and (max-width: (@max - 1)) {
     @ruleset();
@@ -43,18 +43,27 @@
 
 * {
     box-sizing: border-box;
+    transition: color 0.3s, background-color 0.3s;
 }
 
 
 html { 
-    font-size: calc(16px + 0.25vw) 
-}
+    font-size: calc(16px + 0.25vw);
+
+        .screen(320px, 1366px,  {
+             font-size: calc(16px + 4 * (100vw - 320px) / 1046);
+        });
+        .screen (1366px, 1930px, {
+            font-size: 20px;
+        });
+  }
+
 
 body {
     background-color: @background-color;
-    font-family: @main-font;
+    
     margin: 0 auto;
-    line-height: normal;
+    line-height: 1.5;
 }
 .site-wrapper {
     margin: 0 auto;
@@ -65,12 +74,12 @@ body {
     justify-content: space-between;
 }
 .header__search {
-        position: relative;
-         align-self: center;
+    position: relative;
+    align-self: center;
 
-         .screen(320px, 640px, {
-        display: none;
-    });
+        .screen(320px, 640px, {
+            display: none;
+        });
 
           .header__input-search {
         flex: 1;
@@ -107,9 +116,7 @@ body {
             bottom: 2px;
             background-image: url('../img/search.svg'); background-repeat:no-repeat;
             background-position: center center;
-
         }
-
 }
     .header__input-search {
         flex: 1;
@@ -122,13 +129,16 @@ body {
 .main {
     color: @title-color;
 }
+
 .header__logo {
+
     .screen (320px, 640px, {
         width: 60%;
         margin-left: auto;
         order: 1;
-  });
+    });
 }
+
 .menu__burger {
     width: 50px;
     height: 45px;
@@ -142,10 +152,9 @@ body {
     -o-transition: .5s ease-in-out;
     transition: .5s ease-in-out;
     cursor: pointer;
-    margin-bottom: 30px;
-
-    
+    margin-bottom: 30px;  
 }
+
 .menu__stripe {
     display: block;
     position: absolute;
@@ -194,6 +203,7 @@ body {
         width: 0%;
         opacity: 0;
     }
+
     :nth-child(3) {
         -webkit-transform: rotate(-45deg);
         -moz-transform: rotate(-45deg);
@@ -203,25 +213,28 @@ body {
         left: 8px;
     }
 }
+
 .menu__mobile {
      display: none;
-      .screen (320px, 640px, {
-          display:block;
-  });
+
+        .screen (320px, 640px, {
+            display:block;  
+        });
 }
 
 .menu__list {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-top: 5%; 
-    .screen(640px, 1920px, { 
-        justify-content: space-around;
-    });
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5%; 
+
+        .screen(640px, 1920px, { 
+            justify-content: space-around;
+        });
 }
 
-.menu__list-mobile{
-     visibility: hidden;
+.menu__list-mobile {
+    visibility: hidden;
     position: absolute;
     background-color: @background-color;
     top: 78px;
@@ -229,20 +242,23 @@ body {
     width: 90vw;
     padding: 15px 10px;
     transition: left .3s;
-    .menu__link  {
-         &:hover {
-            color: @hover-color;
-    }
-}
+
+        .menu__link  {
+            &:hover {
+                color: @hover-color;
+            }   
+        }   
 }
 .show-menu {
         visibility: visible;
         left: 9%;
         z-index: 2;
  }
+
 .menu__item {
-        margin: 15px 0;
-         position: relative;
+    margin: 15px 0;
+    position: relative;
+
     ::after {
         position: absolute;
         content: "";
@@ -254,32 +270,28 @@ body {
         right: -50%;
 
         .screen (640px, 768px, {
-        right: -30%;
-  });
+            right: -30%;
+        });
     }
 }
-
-        
-    
-
 
  .main__goods-button,
  .main__list-button,
  .subscribe__form-button {
-     font-size: @small-title;
-     font-family: "LeagueSpartan", sans-serif;
-     font-weight: @bold-font;
-     text-transform: uppercase;
-     padding:@btn-padding ;
-     
-  &:hover {
-            color: @hover-color;
-            border-color: @hover-color;
-        }
+    font-size: @small-title;
+    font-family: "LeagueSpartan", sans-serif;
+    font-weight: @bold-font;
+    text-transform: uppercase;
+    padding:@btn-padding ;
+
+    &:hover {
+        color: @hover-color;
+        border-color: @hover-color;
+    }
 
     &:last-child:hover {
-        color: @border-color-input;
-        border-color: @border-color-input;
+    color: @border-color-input;
+    border-color: @border-color-input;
     }
  }
 
@@ -291,15 +303,17 @@ body {
     font-size: @normal-title;
     font-weight: @normal-font;
     
-    .screen (320px, 640px, {
-        font-size: @small-title;
-  });
+        .screen (320px, 640px, {
+            font-size: @small-title;
+        });
 }
+
 .link {
     text-decoration: none;
     color: @text-color;
     transition: all 0.3s ease-in-out;
 }
+
  .button {
      background-color: transparent;
      color: @title-color;
@@ -308,6 +322,7 @@ body {
      border-color: @border-color;
      outline: none;
  }
+
 .main__offer,
 .main__goods-item,
 .main__list-item {
@@ -323,10 +338,11 @@ body {
     height: 80vh;
     margin: 30px 0;
 
-    .screen(640px, 960px, {
-        margin: 20px 0;
-    });
+        .screen(640px, 960px, {
+            margin: 20px 0;
+        });
 }
+
 .main__offer-title {
     font-size: @extra-title;
     font-family: "LeagueSpartan", sans-serif;
@@ -334,14 +350,14 @@ body {
     padding-top: 20px;
     font-weight: @bold-font;
 
-    .screen (320px, 640px, {
-       font-size: 4rem;
-  });
-  .screen (1024px, 1920px, {
-       padding-top: 60px;
-  });
-
+        .screen (320px, 640px, {
+            font-size: 4rem;
+        });
+        .screen (1024px, 1920px, {
+            padding-top: 60px;
+        });
 }
+
 .main__offer-description {
     font-family: @main-font;
     font-size: 32px;
@@ -349,17 +365,18 @@ body {
     padding-bottom: 40px;
     width: 36%;
 
-     .screen (320px, 640px, {
-       font-size: 1.2rem;
-       width: 60%;
-  });
+        .screen (320px, 640px, {
+            font-size: 1.2rem;
+            width: 60%;
+        });
 
-    .screen(640px, 1024px, {
-        width: 62%;
-    });
-   
+        .screen(640px, 1024px, {
+            width: 62%;
+        });
+
 }
-.main__offer-button{
+
+.main__offer-button {
     padding: @btn-padding;
     margin-bottom: 10%;
     &:hover {
@@ -370,6 +387,7 @@ body {
         margin-bottom: 0;
     });
 }
+
  .main__goods-title {
     font-family:  "LeagueSpartan", sans-serif;
     font-size: @large-title;
@@ -377,8 +395,8 @@ body {
     text-transform: uppercase;
         
         .screen (320px, 640px, {
-        font-size: @large-title / 1.5;
-  });
+            font-size: @large-title / 1.5;
+        });
 
  }
  .main__list-title {
@@ -388,17 +406,17 @@ body {
      font-weight: @bold-font;
      padding: 10% 0;
 
-     .screen (320px, 640px, {
-        font-size: @midi-title / 1.5;
-  });
-  .screen (320px,768px, {
-        padding: 5% 0;
-  });
+        .screen (320px, 640px, {
+            font-size: @midi-title / 1.5;
+        });
+        .screen (320px,768px, {
+            padding: 5% 0;
+        });
 
  }
  .main__list-description {
      font-family: @main-font;
-     font-size: 16px;
+    //  font-size: 16px;
      font-weight: @normal-font;
      
 
@@ -407,42 +425,38 @@ body {
  .main__goods {
      display: flex;
 
-      .screen(320px, 768px, {
-        flex-direction: column;
-    });
+        .screen(320px, 960px, {
+            flex-direction: column;
+        });
  }
 
 .main__goods-item {
-    padding-top: 5%;
+    padding: 5%;
+    padding-top: 1%;
     width: 50%;
     flex-direction: column;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
     height: 55vh;
     margin: 10px 0 15px 0;
 
-     .screen(320px, 768px, {
-        width: 90vw;
-        height: 70vh;
-    });
+        .screen(320px, 960px, {
+            width: 90vw;
+            height: 70vh;
+        });
 
-    .screen(640px, 768px, {
-        margin-bottom: 20px;
-
-    });
+        .screen(640px, 768px, {
+            margin-bottom: 20px;
+        });
 
 }
 .main__goods-description {
-        font-size: 24px;
-        padding: 10px 0 20px 0;
-
-        .screen(640px, 768px, {
-        font-size: 1.25rem;
-        padding: 10% 0;
-        width: 77%;
     
-    });
-}
+            .screen(640px, 768px, {
+                width: 77%;
+            });
+}   
+
  .first-good {
     background-image: url(../img/Beoplay.jpg) ;
     padding-right: 3%;
@@ -450,15 +464,18 @@ body {
     align-items: flex-end;
     margin-right: 30px;
  }
+
  .second-good {
     background-image: url(../img/Leica.png);
     text-align: left;
     padding-left: 3%;
     align-items: flex-start;    
  }
+
  .main__goods-button {
      margin-top: 20px;
  }
+
 .main__offer,
 .first-good,
 .second-good,
@@ -469,60 +486,62 @@ body {
       background-repeat: no-repeat;
       background-position: center center;
     
-    .screen (320px, 640px, {
-        height: 50vh;
-        
-  });
+        .screen (320px, 640px, {
+            height: 50vh;
+            
+         });
 
  }
+
  .main__list {
      display: flex;
      justify-content: space-between;
 
-     .screen(320px, 768px, {
-        flex-direction: column;
-    });
+        .screen(320px, 768px, {
+            flex-direction: column;
+        });
  }
- .main__list-item {
-     .screen(768px, 1920px, {
-        padding: 3%  2%;
-        align-items: center;
-        width: 33%;
-        height: 55vh;
-        margin: 10px 20px 10px 0;
-        text-align: center;
-     });
-    .screen(320px, 768px, {
-        padding-top: 10%;
-        margin: 20px 0;
-        align-items: center;
-    });
-    .screen(425px,768px, {
-        height: 60vh;
-    });
-    // .screen(768px,960px, {
-    //     height: 70vh;
-    // });
 
+ .main__list-item {
+        .screen(768px, 1920px, {
+            padding: 3%  2%;
+            align-items: center;
+            width: 33%;
+            height: 55vh;
+            margin: 10px 20px 10px 0;
+            text-align: center;
+        });
+        .screen(320px, 768px, {
+            padding-top: 10%;
+            margin: 20px 0;
+            align-items: center;
+        });
+        .screen(425px,768px, {
+            height: 60vh;
+        });
 
  }
 .first-item {
     background-image: url(../img/Molekule.png);
 }
+
 .second-item {
      background-image: url(../img/Signature.png);
      justify-content: flex-end;
-    & .button  {
-     .screen(320px, 768px, {
-         margin-bottom: 20px;
-     });
-    }
+
+        & .button  {
+        .screen(320px, 768px, {
+            margin-bottom: 20px;
+        });
+        }
 }
+
  .third-item {
      background-image: url(../img/DR-II.png);
      margin-right: 0;
 
  }
+
  .subscribe {
     display: flex;
     flex-direction: column;
@@ -531,23 +550,23 @@ body {
 
 
  .subscribe__appile-title {
-     font-size: 36px;
-     font-weight: @normal-font;
-     font-family: @main-font;
-     color: @text-color;
-     padding-bottom: 20px;
+    font-size: 36px;
+    font-weight: @normal-font;
+    font-family: @main-font;
+    color: @text-color;
+    padding-bottom: 20px;
     padding-top: 10%;
 
+        .screen (320px, 640px, {
+            font-size: @midi-title / 1.5;
+        });
 
-     .screen (320px, 640px, {
-        font-size: @midi-title / 1.5;
-  });
-  .screen(640px, 768px, {
-        padding: 3% 0;
-    
-    });
-   
+        .screen(640px, 768px, {
+            padding: 3% 0;
+
+        });
  }
+
 .subscribe__appile-text,
 .footer__copyright {
     font-weight: @normal-font;
@@ -555,13 +574,13 @@ body {
     font-size: @small-title;
     color: @text-color;
     padding-bottom: 10%;
-
-
  }
+
  .subscribe__appile-text {
          padding: 20px 50px 40px;
  }
- .subscribe__form {
+
+.subscribe__form {
     display: flex;
     flex-direction: column;
     align-self: center;
@@ -575,32 +594,35 @@ body {
         text-align: center;
     }
 }
-    .subscribe__form-input{
-        background: transparent;
 
-    }
-    .subscribe__form-button{
-        margin: 10px 0;
-        padding: 10px 0;
-        width: 100%;
-    
+.subscribe__form-input{
+    background: transparent;
+
+}
+
+.subscribe__form-button {
+    margin: 10px 0;
+    padding: 10px 0;
+    width: 100%;
+
     .screen(640px, 768px, {
-        align-self:center;
-    
+        align-self: center;
     });
- }
+}
+
 .footer__menu {
 
      .screen (320px, 640px, {
         display: none;
   });
 }
+
 .footer__copyright {
     text-align: center;
     padding: 5% 0;
 
-     .screen(640px, 768px, {
-        padding: 10% 0;
-    });
+        .screen(640px, 768px, {
+            padding: 10% 0;
+        });
 
 }
