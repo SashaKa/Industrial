@@ -8,11 +8,7 @@ $breakpoint-desktop:    1152px;
 $breakpoint-laptop-hd:  1280px;
 $breakpoint-desktop-hd: 1920px;
 
-@mixin respond-to ($breakpoint-name) {
-   @media screen and (min-width: $breakpoint-name) {
-       @content;
-   }
-}
+
 
 @mixin _print_maped_properties( $props ) {
     @each $prop, $value in $props {
